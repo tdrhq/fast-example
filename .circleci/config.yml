@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2020.01
+        auth:
+          username: tdrhq
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: |
+             sudo apt-get install imagemagick
+             ./gen.sh
+      - run:
+          name: Record to screenshotbot
+          command: |
+            curl https://screenshotbot.io/recorder.sh | sh
+            ~/screenshotbot/recorder \
+              --directory ${CIRCLE_ARTIFACTS}/*/*/artifacts/screenshot_bundle.zip \
+              --channel screenshotbot-example-circleci-test \
+              --metadata ${CIRCLE_ARTIFACTS}/*/*/artifacts/metadata.xml \
+              --production \
+              --branch ${CIRCLE_BRANCH} \
+              --api-key ${SCREENSHOTBOT_API_KEY} \
+              --repo-url ${CIRCLE_REPOSITORY_URL} \
+              --api-secret ${SCREENSHOTBOT_API_SECRET}
