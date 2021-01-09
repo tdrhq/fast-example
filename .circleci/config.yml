@@ -9,7 +9,8 @@ jobs:
     steps:
       - checkout
       - run: |
-             sudo apt-get install imagemagick
+             sudo apt-get update
+             sudo apt-get install -y imagemagick
              ./gen.sh
       - run:
           name: Record to screenshotbot
