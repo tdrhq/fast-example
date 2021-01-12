@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e
 set -x
+
 mkdir screenshots || true
-convert -size 360x360 xc:white -font "FreeMono" -pointsize 12 -fill black -draw @ascii.txt screenshots/image.png
+rm screenshots/image.png
+convert -size 360x360 canvas:none -font "FreeMono" -pointsize 12 -fill xc:yellow -stroke xc:red -draw @ascii.txt screenshots/image.png
+exiftool -all= screenshots/image.png

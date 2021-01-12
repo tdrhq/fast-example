@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: |
              sudo apt-get update
-             sudo apt-get install -y imagemagick
+             sudo apt-get install -y imagemagick exiftool
              ./gen.sh
       - run:
           name: Record to screenshotbot
