@@ -1,4 +1,4 @@
-text 15, 15 "ddfdfde
+text 15, 15 "ddfdfdedfdf
 dfdfe
 
 dfd
