@@ -5,8 +5,7 @@
 image: busybox:latest
 
 before_script:
-  - sudo apt-get update
-  - sudo apt-get install -y imagemagick exiftool
+  - apt-get install -y imagemagick exiftool
 
 after_script:
   - echo "After script section"
