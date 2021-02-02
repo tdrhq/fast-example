@@ -23,10 +23,11 @@ build1:
         --directory screenshots \
         --channel fast-example \
         --production \
-        --branch ${CIRCLE_BRANCH} \
-        --api-key ${SCREENSHOTBOT_API_KEY} \
-        --repo-url ${CIRCLE_REPOSITORY_URL} \
-        --api-secret ${SCREENSHOTBOT_API_SECRET}
+        --branch "${CI_COMMIT_REF_NAME}" \
+        --api-key "${SCREENSHOTBOT_API_KEY}" \
+        --repo-url "${CI_PROJECT_URL}" \
+        --pull-request "${CI_MERGE_REQUEST_ID}"
+        --api-secret "${SCREENSHOTBOT_API_SECRET}"
 
 test1:
   stage: test
