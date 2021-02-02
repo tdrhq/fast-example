@@ -29,6 +29,9 @@ build1:
         --repo-url "$CI_PROJECT_URL" \
         --pull-request "$CI_MERGE_REQUEST_PROJECT_URL" \
         --api-secret "$SCREENSHOTBOT_API_SECRET"
+  only:
+    - merge_requests
+    - master
 
 
 test1:
