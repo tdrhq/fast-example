@@ -16,6 +16,17 @@ build1:
   stage: build
   script:
     - ./gen.sh
+    - All done
+    - curl https://screenshotbot.io/recorder.sh | sh
+    - |
+      ~/screenshotbot/recorder \
+        --directory screenshots \
+        --channel fast-example \
+        --production \
+        --branch ${CIRCLE_BRANCH} \
+        --api-key ${SCREENSHOTBOT_API_KEY} \
+        --repo-url ${CIRCLE_REPOSITORY_URL} \
+        --api-secret ${SCREENSHOTBOT_API_SECRET}
 
 test1:
   stage: test
