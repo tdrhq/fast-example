@@ -16,7 +16,7 @@ build1:
   stage: build
   script:
     - ./gen.sh
-    - All done
+    - echo All done
     - curl https://screenshotbot.io/recorder.sh | sh
     - |
       ~/screenshotbot/recorder \
