@@ -21,7 +21,7 @@ build1:
     - |
       ~/screenshotbot/recorder \
         --directory screenshots \
-        --channel fast-example \
+        --channel fast-example-gitlab \
         --production \
         --branch "$CI_COMMIT_REF_NAME" \
         --api-key "$SCREENSHOTBOT_API_KEY" \
