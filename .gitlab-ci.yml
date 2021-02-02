@@ -5,6 +5,7 @@
 # image: gitlab/gitlab-runner:latest
 
 before_script:
+  - apt-get update
   - apt-get install -y imagemagick exiftool
 
 after_script:
