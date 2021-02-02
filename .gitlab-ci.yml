@@ -21,6 +21,7 @@ build1:
     - |
       ~/screenshotbot/recorder \
         --directory screenshots \
+        --verbose \
         --channel fast-example-gitlab \
         --production \
         --branch "$CI_COMMIT_REF_NAME" \
