@@ -26,7 +26,7 @@ build1:
         --branch "$CI_COMMIT_REF_NAME" \
         --api-key "$SCREENSHOTBOT_API_KEY" \
         --repo-url "$CI_PROJECT_URL" \
-        --pull-request "$CI_MERGE_REQUEST_ID" \
+        --pull-request "$CI_MERGE_REQUEST_PROJECT_URL" \
         --api-secret "$SCREENSHOTBOT_API_SECRET"
 
 
