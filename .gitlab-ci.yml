@@ -29,6 +29,7 @@ build1:
         --pull-request "${CI_MERGE_REQUEST_ID}"
         --api-secret "${SCREENSHOTBOT_API_SECRET}"
 
+
 test1:
   stage: test
   script:
