@@ -32,15 +32,3 @@ build1:
   only:
     - merge_requests
     - master
-
-
-test1:
-  stage: test
-  script:
-    - echo "Do a test here"
-    - echo "For example run a test suite"
-
-deploy1:
-  stage: deploy
-  script:
-    - echo "Do your deploy here"
