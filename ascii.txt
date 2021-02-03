@@ -1,4 +1,4 @@
-This is a demo screenshot.
+text 15, 15 "This is a demo of Screenshotbot.
 
-This may not look like a typical screenshot in your app,
-but it explains how Screenshotbot works.
+This may not look like a real production Screenshot,
+but is useful to understand how Screenshotbot works."
