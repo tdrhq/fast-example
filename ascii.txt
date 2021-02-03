@@ -1,7 +1,4 @@
-text 15, 15 "ddfdfdedfdf
-dfdfe
+This is a demo screenshot.
 
-dfd_13
-dfd
-dfdf DFDFDFDF...8
-dfdf"
+This may not look like a typical screenshot in your app,
+but it explains how Screenshotbot works.
