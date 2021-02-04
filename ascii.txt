@@ -1,7 +1,7 @@
-text 15, 15 "ddfdfdedfdf
+text 15, 15 "ddfdfdedfdfdd
 dfdfe
 
 dfd_2
 dfd
-dfdf DFDFDFDF...8
+dfdf DFDFDFDF...9
 dfdf"
