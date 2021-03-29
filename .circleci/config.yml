@@ -20,7 +20,7 @@ jobs:
               --directory screenshots \
               --channel fast-example \
               --production \
-              --branch ${CIRCLE_BRANCH} \
+              --branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
               --api-secret ${SCREENSHOTBOT_API_SECRET}
