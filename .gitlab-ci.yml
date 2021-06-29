@@ -16,7 +16,7 @@ build1:
   stage: build
   script:
     - git remote # debugging
-    - git show origin/master
+    - git fetch origin master # GitLab doesn't do this, and Screenshotbot needs it
     - ./gen.sh
     - echo All done "$CI_MERGE_REQUEST_PROJECT_URL"
     - curl https://screenshotbot.io/recorder.sh | sh
