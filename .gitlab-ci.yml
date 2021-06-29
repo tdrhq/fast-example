@@ -15,6 +15,7 @@ after_script:
 build1:
   stage: build
   script:
+    - git remote # debugging
     - ./gen.sh
     - echo All done "$CI_MERGE_REQUEST_PROJECT_URL"
     - curl https://screenshotbot.io/recorder.sh | sh
