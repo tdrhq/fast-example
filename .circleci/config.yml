@@ -13,6 +13,8 @@ jobs:
              sudo apt-get install -y imagemagick
              ./gen.sh
              touch foo.txt
+             git config --global user.email 'you@example.com'
+             git config --global user.name 'Your Name'
              git add foo.txt
              git commit -m dummy
 
