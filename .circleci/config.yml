@@ -12,6 +12,9 @@ jobs:
              sudo apt-get update
              sudo apt-get install -y imagemagick
              ./gen.sh
+             touch foo.txt
+             git add foo.txt
+             git commit -m dummy
 
       - run:
           name: Record to screenshotbot
