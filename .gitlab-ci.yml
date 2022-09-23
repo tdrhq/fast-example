@@ -19,18 +19,19 @@ build1:
     - git fetch origin master # GitLab doesn't do this, and Screenshotbot needs it
     - ./gen.sh
     - echo All done "$CI_MERGE_REQUEST_PROJECT_URL"
-    - curl https://screenshotbot.io/recorder.sh | sh
+    - curl https://staging.screenshotbot.io/recorder.sh | sh
     - |
       ~/screenshotbot/recorder \
         --directory screenshots \
         --verbose \
         --channel fast-example-gitlab \
         --production \
-        --branch master \
+        --main-branch master \
         --api-key "$SCREENSHOTBOT_API_KEY" \
         --repo-url "$CI_PROJECT_URL" \
         --gitlab-merge-request-iid "$CI_MERGE_REQUEST_IID" \
-        --api-secret "$SCREENSHOTBOT_API_SECRET"
+        --api-secret "$SCREENSHOTBOT_API_SECRET" \
+        --hostname "https://staging.screenshotbot.io"
   only:
     - merge_requests
     - master
