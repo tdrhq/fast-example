@@ -4,4 +4,5 @@ text 15, 15 "This is a demo of Screenshotbot.1a28.
 This may not look like a real production Screenshot,
 
 
+
 but is useful to understand how Screenshotbot works."
