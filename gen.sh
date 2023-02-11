@@ -7,6 +7,11 @@ cd `dirname $0`
 mkdir screenshots || true
 MAGICK=""
 
+if [ "$CIRCLE_PULL_REQUEST" = "" ] ; then
+    # temporary test to verify situations where master takes time to propagate.
+    sleep 45
+fi
+
 if magick --help ; then
     MAGICK=magick
 fi
