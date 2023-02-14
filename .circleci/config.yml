@@ -13,9 +13,12 @@ jobs:
              sudo apt-get install -y imagemagick
              ./gen.sh
       - run:
-          name: Record to screenshotbot
+          name: Fetch screenshotbot
           command: |
             curl https://screenshotbot.io/recorder.sh | sh
+      - run:
+          name: Record to screenshotbot
+          command: |
             ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example \
@@ -24,3 +27,10 @@ jobs:
               --api-key ${SCREENSHOTBOT_API_KEY} \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
               --api-secret ${SCREENSHOTBOT_API_SECRET}
+      - run:
+          name: Notify screenshotbot of failure
+          command: |
+            ~/screenshotbot/recoder \
+               --channel fast-example
+               --mark-failed
+          when: on_fail

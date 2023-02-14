@@ -8,8 +8,7 @@ mkdir screenshots || true
 MAGICK=""
 
 if [ "$CIRCLE_PULL_REQUEST" != "" && "$CI_MERGE_REQUEST_IID" != ""] ; then
-    # temporary test to verify situations where master takes time to propagate.
-    sleep 45
+    exit 1
 fi
 
 if magick --help ; then
