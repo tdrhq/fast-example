@@ -6,8 +6,10 @@ cd `dirname $0`
 
 mkdir screenshots || true
 MAGICK=""
+env
 
 if [ "$CIRCLE_PULL_REQUEST" != "" && "$CI_MERGE_REQUEST_IID" != ""] ; then
+    # just testing failure modes
     exit 1
 fi
 
