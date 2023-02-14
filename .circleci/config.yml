@@ -16,6 +16,7 @@ jobs:
           name: Fetch screenshotbot
           command: |
             curl https://screenshotbot.io/recorder.sh | sh
+          when: always
       - run:
           name: Record to screenshotbot
           command: |
