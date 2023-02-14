@@ -8,7 +8,7 @@ mkdir screenshots || true
 MAGICK=""
 env
 
-if [ "$CIRCLE_PULL_REQUEST" != "" && "$CI_MERGE_REQUEST_IID" != "" ] ; then
+if [ x"$CIRCLE_PULL_REQUEST" != x && x"$CI_MERGE_REQUEST_IID" != x ] ; then
     # just testing failure modes
     exit 1
 fi
