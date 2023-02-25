@@ -24,8 +24,6 @@ steps:
               --channel fast-example \
               --production \
               --main-branch master \
-              --api-key ${SCREENSHOTBOT_API_KEY} \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
-              --api-secret ${SCREENSHOTBOT_API_SECRET}
 
   displayName: 'Run a multi-line script'
