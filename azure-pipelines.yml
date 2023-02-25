@@ -23,7 +23,6 @@ steps:
               --directory screenshots \
               --channel fast-example \
               --production \
-              --main-branch master \
-              --repo-url ${CIRCLE_REPOSITORY_URL} \
+              --main-branch master
 
   displayName: 'Run a multi-line script'
