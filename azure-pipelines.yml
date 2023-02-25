@@ -18,7 +18,8 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    git fetch origin master
+    git branch
+    git branch -r
     curl https://screenshotbot.io/recorder.sh | sh
     ~/screenshotbot/recorder \
               --directory screenshots \
