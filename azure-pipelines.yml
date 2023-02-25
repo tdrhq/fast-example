@@ -22,7 +22,6 @@ steps:
     ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example \
-              --production \
               --main-branch master
 
   displayName: 'Run a multi-line script'
