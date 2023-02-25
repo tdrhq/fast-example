@@ -18,10 +18,11 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    git fetch origin master
     curl https://screenshotbot.io/recorder.sh | sh
     ~/screenshotbot/recorder \
               --directory screenshots \
-              --channel fast-example \
+              --channel fast-example-azure \
               --main-branch master
 
   displayName: 'Run a multi-line script'
