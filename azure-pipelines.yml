@@ -11,7 +11,13 @@ pool:
 
 steps:
 - checkout: self
+
+  # We want to to be able to fetch the main branch even when we are
+  # building for a Pull Request.
   persistCredentials: true
+
+  # Screenshotbot doesn't work with shallow fetches. You can specify a
+  # large number like 1000 here instead, and that should be good enough.
   fetchDepth: 0
 - script: |
              sudo apt-get install -y fonts-freefont-ttf
