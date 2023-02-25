@@ -22,6 +22,8 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     git fetch
+    git show
+    git status
     git log --all --max-count=10 '--pretty=%H %P'
     curl https://screenshotbot.io/recorder.sh | sh
     ~/screenshotbot/recorder \
