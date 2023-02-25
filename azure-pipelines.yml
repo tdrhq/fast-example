@@ -26,6 +26,7 @@ steps:
     ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example-azure \
-              --main-branch master
+              --main-branch master \
+              --commit-limit 10
 
   displayName: 'Run a multi-line script'
