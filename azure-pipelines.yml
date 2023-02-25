@@ -12,6 +12,7 @@ pool:
 steps:
 - checkout: self
   persistCredentials: true
+  fetchDepth: 0
 - script: |
              sudo apt-get install -y fonts-freefont-ttf
              ./gen.sh
