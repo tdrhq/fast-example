@@ -26,3 +26,5 @@ steps:
               --main-branch master
 
   displayName: 'Run a multi-line script'
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
