@@ -10,6 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: self
+  persistCredentials: true
 - script: |
              ./gen.sh
              echo After convert call
@@ -26,5 +28,3 @@ steps:
               --main-branch master
 
   displayName: 'Run a multi-line script'
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
