@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-text 15,15 "This is a demo of Screenshotbot.1a50.
-=======
-text 15,15 "This is a demo of Screenshotbot.1a48.
-
->>>>>>> 4486687 (..)
+text 15,15 "This is a demo of Screenshotbot.1a49.
 
 
 This may not look like a real production Screenshot,
