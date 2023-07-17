@@ -8,7 +8,7 @@ mkdir screenshots || true
 MAGICK=""
 env
 
-if [ `git rev-parse HEAD` = master ] ; then
+if [ `git rev-parse --abbrev-ref HEAD` = master ] ; then
     exit 1
 fi
 
