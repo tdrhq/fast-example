@@ -8,6 +8,10 @@ mkdir screenshots || true
 MAGICK=""
 env
 
+if [ `git rev-parse HEAD` = master ] ; then
+    exit 1
+fi
+
 if magick --help ; then
     MAGICK=magick
 fi
