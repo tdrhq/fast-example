@@ -23,7 +23,7 @@ jobs:
           command: |
             ~/screenshotbot/recorder \
               --directory screenshots \
-              --channel fast-example \
+              --channel fast-example-2 \
               --production \
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
