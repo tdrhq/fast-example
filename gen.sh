@@ -9,7 +9,7 @@ MAGICK=""
 env
 
 if [ `git rev-parse --abbrev-ref HEAD` = master ] ; then
-    sleep 120
+    sleep 0
 
 fi
 
