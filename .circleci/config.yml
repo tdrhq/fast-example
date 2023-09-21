@@ -24,6 +24,7 @@ jobs:
             ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example \
+               --batch test-batch \
               --production \
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
@@ -33,7 +34,6 @@ jobs:
           name: Notify screenshotbot of failure
           command: |
             ~/screenshotbot/recorder \
-               --batch test-batch \
                --channel fast-example \
                --mark-failed
           when: on_fail
