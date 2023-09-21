@@ -33,6 +33,7 @@ jobs:
           name: Notify screenshotbot of failure
           command: |
             ~/screenshotbot/recorder \
+               --batch test-batch \
                --channel fast-example \
                --mark-failed
           when: on_fail
