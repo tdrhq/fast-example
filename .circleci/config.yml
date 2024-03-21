@@ -24,6 +24,7 @@ jobs:
             ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example \
+               --batch test-batch \
               --production \
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \

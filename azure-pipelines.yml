@@ -28,7 +28,7 @@ steps:
     curl https://screenshotbot.io/recorder.sh | sh
     ~/screenshotbot/recorder \
               --directory screenshots \
-              --channel fast-example-azure \
+              --channel fast-example-azure-2 \
               --main-branch master \
               --commit-limit 10
 
