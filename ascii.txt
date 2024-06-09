@@ -1,4 +1,4 @@
-text 15,15 "This is a demo of Screenshotbot.1eeeeeeddd...
+text 15,15 "This is a demo of Screenshotbot.1e
 
 
 This may not look like a real production Screenshot,
