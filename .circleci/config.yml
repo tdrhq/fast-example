@@ -28,6 +28,7 @@ jobs:
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
+              --release-branch-regex 'release-.*' \
               --api-secret ${SCREENSHOTBOT_API_SECRET}
       - run:
           name: Notify screenshotbot of failure
