@@ -1,11 +1,1 @@
-text 15,15 "This is a demo of Screenshotbot.1eef
-
-
-This may not look like a real production Screenshot,
-
-
-
-
-
-
-.but is useful to understand how Screenshotbot works,,"
+text 90,780 "© 2024 All Rights Reserved"
