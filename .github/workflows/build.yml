@@ -19,6 +19,11 @@ jobs:
       - name: Fetch master branch
         run: git fetch origin master
 
+      - name: Test Git shit
+        run: |
+
+          git remote get-url origin
+
       - name: Install ImageMagick
         run: |
           sudo apt-get update
