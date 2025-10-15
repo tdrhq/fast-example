@@ -24,6 +24,7 @@ jobs:
 
           git remote get-url origin
           cat .git/config
+          GIT_TRACE_CURL=1 git ls-remote 
 
       - name: Install ImageMagick
         run: |
