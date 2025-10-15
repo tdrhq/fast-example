@@ -1,0 +1,53 @@
+name: Build
+
+on:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ '*' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch master branch
+        run: git fetch origin master
+
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+
+      - name: Run gen.sh
+        run: ./gen.sh
+
+      - name: Fetch screenshotbot
+        if: always()
+        run: |
+          curl https://screenshotbot.io/recorder.sh | sh
+
+      - name: Record to screenshotbot
+        if: always()
+        run: |
+          ~/screenshotbot/recorder \
+            --directory screenshots \
+            --channel fast-example \
+            --production \
+            --main-branch master \
+            --repo-url ${{ github.repositoryUrl }} \
+            --release-branch-regex 'release-.*' \
+            --api-key ${{ secrets.SCREENSHOTBOT_API_KEY }} \
+            --api-secret ${{ secrets.SCREENSHOTBOT_API_SECRET }}
+
+      - name: Notify screenshotbot of failure
+        if: failure()
+        run: |
+          ~/screenshotbot/recorder \
+            --channel fast-example \
+            --mark-failed
