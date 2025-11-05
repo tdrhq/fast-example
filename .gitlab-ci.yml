@@ -22,9 +22,14 @@ build1:
     - curl https://screenshotbot.io/recorder.sh | sh
     - |
       ~/screenshotbot/recorder \
-        --directory screenshots \
+        --directory screenshots  --batch foobar \
         --channel fast-example-gitlab \
         --main-branch master
+      ~/screenshotbot/recorder \
+        --directory screenshots --batch foobar\
+        --channel fast-example-gitlab-copy \
+        --main-branch master
+        
   only:
     - merge_requests
     - master
