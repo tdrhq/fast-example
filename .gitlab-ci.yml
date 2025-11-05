@@ -29,6 +29,11 @@ build1:
         --directory screenshots --batch foobar\
         --channel fast-example-gitlab-copy \
         --main-branch master
+      ~/screenshotbot/recorder \
+        --directory screenshots --batch foobar\
+        --channel fast-example-gitlab-copy2 \
+        --main-branch master
+        
         
   only:
     - merge_requests
