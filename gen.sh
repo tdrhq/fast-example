@@ -22,7 +22,7 @@ echo Before convert call
 $MAGICK convert --version
 
 
-FONT=Helvetica
+FONT="FreeSans"
 
 $MAGICK convert -size 375x812 xc:"#F2F2F7" \
         -antialias \
