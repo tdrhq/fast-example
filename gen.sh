@@ -35,7 +35,7 @@ $MAGICK convert -size 375x812 xc:"#F2F2F7" \
   -font "$FONT" -pointsize 14 -fill "#007AFF" -gravity NorthWest -annotate +55+400 "Forgot Password?" \
   -fill "#007AFF" -stroke none -draw "roundrectangle 40,440 335,490 8,8" \
   -font "$FONT" -pointsize 18 -fill "#FFFFFF" -gravity NorthWest -annotate +147+455 "Sign In" \
-  -fill "#111111" -draw @ascii.txt \
+  -fill "#111111" -draw 'text 90,780 "© 2024 All Rights Reserved..."' \
   -strip screenshots/image.png \
 
 
