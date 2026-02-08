@@ -27,6 +27,7 @@ jobs:
               --production \
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
+              --mark-unchanged-from `git rev-parse master` \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
               --release-branch-regex 'release-.*' \
               --api-secret ${SCREENSHOTBOT_API_SECRET}
