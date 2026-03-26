@@ -24,7 +24,7 @@ jobs:
             ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example \
-              --production \
+              --production  --tags foobar \
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
@@ -35,5 +35,5 @@ jobs:
           command: |
             ~/screenshotbot/recorder \
                --channel fast-example \
-               --mark-failed --tags foobar
+               --mark-failed
           when: on_fail
