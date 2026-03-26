@@ -24,7 +24,7 @@ jobs:
             ~/screenshotbot/recorder \
               --directory screenshots \
               --channel fast-example \
-              --production  --tags foobar \
+              --production \
               --main-branch master \
               --api-key ${SCREENSHOTBOT_API_KEY} \
               --repo-url ${CIRCLE_REPOSITORY_URL} \
