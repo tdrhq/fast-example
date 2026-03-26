@@ -35,5 +35,5 @@ jobs:
           command: |
             ~/screenshotbot/recorder \
                --channel fast-example \
-               --mark-failed
+               --mark-failed --tags foobar
           when: on_fail
