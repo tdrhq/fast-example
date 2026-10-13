@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -37,3 +37,8 @@ jobs:
                --channel fast-example \
                --mark-failed
           when: on_fail
+
+workflows:
+  build:
+    jobs:
+      - build
