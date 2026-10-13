@@ -1,0 +1,67 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+      - 'release-*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Screenshotbot needs the full history (no shallow clone) so it can
+          # find the merge-base against master.
+          fetch-depth: 0
+
+      - name: Fetch master
+        run: git fetch origin master
+
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick fonts-freefont-ttf
+          # Allow ImageMagick to read draw commands from a file (gen.sh uses
+          # `-draw @ascii.txt`), which the stock Ubuntu policy blocks.
+          if [ -f /etc/ImageMagick-6/policy.xml ]; then
+            sudo sed -i 's/rights="none" pattern="@\*"/rights="read" pattern="@*"/g' /etc/ImageMagick-6/policy.xml
+          fi
+
+      - name: Generate screenshots
+        run: ./gen.sh
+
+      - name: Fetch screenshotbot
+        if: always()
+        run: curl https://screenshotbot.io/recorder.sh | sh
+
+      - name: Record to screenshotbot
+        env:
+          SCREENSHOTBOT_API_KEY: ${{ secrets.SCREENSHOTBOT_API_KEY }}
+          SCREENSHOTBOT_API_SECRET: ${{ secrets.SCREENSHOTBOT_API_SECRET }}
+        run: |
+          ~/screenshotbot/recorder \
+            --directory screenshots \
+            --channel fast-example \
+            --production \
+            --main-branch master \
+            --api-key "${SCREENSHOTBOT_API_KEY}" \
+            --api-secret "${SCREENSHOTBOT_API_SECRET}" \
+            --repo-url "${{ github.server_url }}/${{ github.repository }}" \
+            --release-branch-regex 'release-.*'
+
+      - name: Notify screenshotbot of failure
+        if: failure()
+        env:
+          SCREENSHOTBOT_API_KEY: ${{ secrets.SCREENSHOTBOT_API_KEY }}
+          SCREENSHOTBOT_API_SECRET: ${{ secrets.SCREENSHOTBOT_API_SECRET }}
+        run: |
+          ~/screenshotbot/recorder \
+            --channel fast-example \
+            --api-key "${SCREENSHOTBOT_API_KEY}" \
+            --api-secret "${SCREENSHOTBOT_API_SECRET}" \
+            --mark-failed
