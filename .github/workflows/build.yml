@@ -19,6 +19,9 @@ jobs:
           # find the merge-base against master.
           fetch-depth: 0
 
+      - name: Dump event payload
+        run: cat "$GITHUB_EVENT_PATH"
+
       - name: Fetch master
         run: git fetch origin master
 
