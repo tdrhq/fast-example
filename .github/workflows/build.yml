@@ -37,7 +37,8 @@ jobs:
 
       - name: Fetch screenshotbot
         if: always()
-        run: curl https://screenshotbot.io/recorder.sh | sh
+        ## If you're copying this for your project, ignore the ?owner= argument.
+        run: curl https://screenshotbot.io/recorder.sh?owner=$GITHUB_REPOSITORY_OWNER | sh
 
       - name: Record to screenshotbot
         env:
